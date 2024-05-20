@@ -66,9 +66,14 @@ no_button = WebDriverWait(driver, 10).until(
 )
 no_button.click()
 
-for i in range(100):
-    # Tinderのメインページが表示されるまで待機
+like_button = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.XPATH, '//*[@id="t2067052097"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div/div[3]/div/div[4]/button'))
+)
+like_button.click()
+
+for i in range(99):
     like_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//*[@id="t2067052097"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div/div[3]/div/div[4]/button'))
+        EC.element_to_be_clickable((By.XPATH, '//*[@id="t2067052097"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div/div[4]/div/div[4]/button'))
     )
     like_button.click()
+
